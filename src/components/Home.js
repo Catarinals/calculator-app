@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   const handler = (arg) => {
-    if (res == "Infinity") {
+    if (res == "ERROR") {
       setRes("");
       return;
     }
