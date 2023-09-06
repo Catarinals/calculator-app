@@ -27,19 +27,20 @@ export default function Home() {
   ];
 
   const findValue = () => {
+    // eslint-disable-next-line no-new-func
     let result = Function("return " + res)();
     setRes(result.toString());
   };
 
   const handler = (arg) => {
-    if (res == "ERROR") {
+    if (res === "Error") {
       setRes("");
       return;
     }
 
-    if (arg == "C") setRes("");
-    else if (arg == "=") findValue();
-    else if (arg == "Del") {
+    if (arg === "C") setRes("");
+    else if (arg === "=") findValue();
+    else if (arg === "Del") {
       let n = res.length;
       if (n > 0) setRes(res.slice(0, n - 1));
     } else setRes(res.concat(arg));
